@@ -1,10 +1,9 @@
 package MVC;
-
 import java.io.*;
 import java.awt.*;
 
 public class MyReader {
-
+//buffering characters to provide efficient reading of characters, arrays, and lines.
     private BufferedReader br;
     String path;
 
@@ -56,13 +55,11 @@ public class MyReader {
     }
 
     private String getFileName() {
+        //The FileDialog class displays a dialog window from which the user can select a file
         FileDialog fd = new FileDialog(new Frame(), "Select Input File");
         fd.setFile("input");
         fd.setVisible(true);
         path = fd.getDirectory() + fd.getFile();
-        return path;  // return the complete path
-
+        return path;  // returns the complete path
     }
-
 }
-    
