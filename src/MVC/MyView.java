@@ -53,7 +53,14 @@ public class MyView extends javax.swing.JPanel implements Viewable {
         //road
         g.setColor(Color.DARK_GRAY);
         g.fillRect(0, 125, width, 150);
-        //g.fillRect(0, Globals.getLane(1), width, Globals.getLane(Globals.getNumLanes()));
+        
+        //stadium
+        g.drawString("NATIONAL STADIUM KARACHI",20,300);  
+        setBackground(Color.WHITE.darker()); 
+        g.setColor(Color.WHITE.darker());
+        g.fillOval(0, 300, 180, 150);
+        g.setColor(Color.GREEN.darker());
+        g.fillOval(5, 305, 170, 140);
         
         //lines
         for (int i = Globals.getLane(1); count < Globals.getNumLanes() + 1; i += Globals.LaneSize) {
