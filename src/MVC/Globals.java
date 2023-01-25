@@ -1,7 +1,6 @@
 package MVC;
-
+// Here the size and dimensions of environment are defined 
 public class Globals {
-
     public static int NumLanes = 3; //number of lanes
     public static int CarsArriving = 250; //number of cars beginning on the road per minute
     public static int ViewPointOne = 100; //the left x of viewpoint 1
@@ -13,6 +12,7 @@ public class Globals {
     public static int LaneOne = 125;
     public static int LaneSize = 50;
 
+    
     public static int getNumLanes() {
         return NumLanes;
     }
