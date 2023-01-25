@@ -2,9 +2,9 @@ package MVC;
 
 /**
  * Generic Controller for the Model/View/Controller pattern using interfaces
- * NB: it knows *nothing* about what is is the model or the view
+ * P.S. it knows *nothing* about what is is the model or the view
  * 
- * @author levenick
+ * 
  */
 public class GenericMVC_Controller extends Thread {
 
@@ -24,7 +24,7 @@ public class GenericMVC_Controller extends Thread {
         theView.view1.theModel = theModel;
         theView2.view1.theModel = theModel;
     }
-
+//Thread execution
     public void run() {
         for (;;) {
             if (running || stepping) {
@@ -48,11 +48,8 @@ public class GenericMVC_Controller extends Thread {
 
     private void step() {
         theModel.step();
-        
         theView.view1.display();
-        theView2.view1.display();
-        
-
+        theView2.view1.display(); 
     }
 
     void setStep() {
