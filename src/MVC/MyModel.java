@@ -1,37 +1,28 @@
 package MVC;
-
 import java.awt.Point;
 import java.util.ArrayList;
 
 class MyModel implements Modelable {
 
     VehicleList theVehicles;
-    int t;
-    int count;
+    int t;          //t is for stats
+    int count;      //counts all the vehicles in arraylist
 
     public MyModel() {
-        init();
+        init();     // init method is a predefine method to initialize an object after its creation.
     }
 
     public int getT() {
-        return t;
+        return t;       //displays in console
     }
 
     public void init() {
-        t = 1;
+        t = 1; 
         count = 25;
         theVehicles = new VehicleList();
-//        for (int i = 0; i < 1; i++) {
-//          theVehicles.add(new Car(60, i));
-//        }
-//        
-        //for (int i = 0; i < 3; i++) {
-//          theVehicles.add(new Truck(10, 1,new Driver((int)(Math.random()*20)+55,Math.random()+0.2),laneChooser()));
-        //theVehicles.add(new Truck(100, 1,new Driver((int)(Math.random()*20)+55,Math.random()+0.2),laneChooser()));
-
-        //}
     }
 
+    //This is the method that generates random vehicles on the view through switch case and Math.random
     public Vehicles randomVehicle() {
         Vehicles v = null;
         switch ((int) (Math.random() * 8)) {
@@ -70,11 +61,10 @@ class MyModel implements Modelable {
             start = new Point(0, Globals.getLane(3) + 10);
         }
         return start;
-
     }
 
     public void step() {
-        t++; // okay, okay, it's the least I can do!
+        t++; 
         count++;
 
         if (count / 15 ==1) {
@@ -101,23 +91,18 @@ class MyModel implements Modelable {
 
     public String toString() {
         String returnMe = "";
-
         returnMe += "\n\nMyModel! t=" + t;
-
         return returnMe;
     }
 
+    //method that helps to view vehicle 
     public VehicleList viewSees(int begin, int end) {
         VehicleList viewVehicles = new VehicleList();
-
         for (Vehicles v : theVehicles) {
-
             if (v.position.x + v.length >= begin && v.position.x <= end) {
                 viewVehicles.add(v);
             }
         }
-
         return viewVehicles;
     }
-
 }
